@@ -1,14 +1,10 @@
 <?php
 
 //include  files
-require 'Pokemon_Base.php';
-require 'Pokemon_Type.php';
-require 'Pokemon_Attack.php';
-require 'Pokemon_Weakness.php';
-require 'Pokemon_Resistance.php';
+require 'init.php';
 
 //Create Pokemon
-$pikachu = new Pokemon_Base(
+$pikachu = new Pokemon(
     /* Name */          'Pikachu',
     /* Type */          'Lightning',
     /* Health */        60,
@@ -21,7 +17,7 @@ $pikachu = new Pokemon_Base(
 );
 
 //Create Pokemon
-$charmeleon = new Pokemon_Base(
+$charmeleon = new Pokemon(
     /* Name */          'Charmeleon',
     /* Type */          'Fire',
     /* Health */        60,
@@ -33,25 +29,33 @@ $charmeleon = new Pokemon_Base(
     /* Resistance */    new Pokemon_Resistance('Lightning', 10)
 );
 
+//create pokemon bag
+$pokeBag = new PokeBag();
+//add pokemon to bag
+$pokeBag->add($pikachu);
+$pokeBag->add($charmeleon);
+//remove pokemon from bag
+// $pokeBag->remove($charmeleon);
+
 //show battle
 echo '--------------------------------[STATS]--------------------------------<br />';
-echo $pikachu->getName() . '<br />';
-echo $pikachu->getHitPoints() . 'HP';
+echo $pikachu->getName() . ' (' . $pikachu->getHitPoints() . 'HP)<br />';
 echo '<br /><br />';
-echo $charmeleon->getName() . '<br />';
-echo $charmeleon->getHitPoints() . 'HP';
+echo $charmeleon->getName() . ' (' . $charmeleon->getHitPoints() . 'HP)<br />';
 
 echo '<br /><br />';
 echo '--------------------------------[LOG]--------------------------------<br />';
 echo $pikachu->attackEnemy($charmeleon, 'Electric Ring') . '<br />';
+echo $charmeleon->getName() . ' (new HP: ' . $charmeleon->getHitPoints() . ')<br />';
+echo '<br /><br />';
 echo $charmeleon->attackEnemy($pikachu, 'Flare') . '<br />';
+echo $pikachu->getName() . ' (new HP: ' . $pikachu->getHitPoints() . ')<br />';
 
+
+//show bag + content
 echo '<br /><br />';
-echo '--------------------------------[STATS]--------------------------------<br />';
-echo $pikachu->getName() . '<br />';
-echo $pikachu->getHitPoints() . 'HP';
-echo '<br /><br />';
-echo $charmeleon->getName() . '<br />';
-echo $charmeleon->getHitPoints() . 'HP';
+echo '--------------------------------[PokeBag]--------------------------------<br />';
+echo $pokeBag->getCount() . ' Pokemons<br /><br />';
+echo $pokeBag->getText();
 
 ?>
