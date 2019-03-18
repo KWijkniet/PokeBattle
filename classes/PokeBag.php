@@ -52,7 +52,7 @@ class PokeBag {
         Function Variables:
     */
     public function removeAll(){
-        unset($this->pokemons);
+        $this->pokemons = array();
     }
 
     /*

@@ -36,6 +36,7 @@ $pokeBag->add($pikachu);
 $pokeBag->add($charmeleon);
 //remove pokemon from bag
 // $pokeBag->remove($charmeleon);
+// $pokeBag->removeAll();
 
 //show battle
 echo '--------------------------------[STATS]--------------------------------<br />';
