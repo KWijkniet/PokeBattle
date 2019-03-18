@@ -55,10 +55,6 @@ echo $pikachu->name . ' (new HP: ' . $pikachu->hitpoints . ')<br />';
 //show bag + content
 echo '<br /><br />';
 echo '--------------------------------[PokeBag]--------------------------------<br />';
-echo $pokeBag->getCount() . ' Pokemons<br /><br />';
-echo $pokeBag->getText();
-
-echo '<br /><br />';
-echo '--------------------------------[PokeBag]--------------------------------<br />';
-echo $pokeBag->getByName('Charmeleon')->name;
+echo $pokeBag->getCount() . ' Pokemons in the PokeBag<br /><br />';
+echo $pokeBag->getInfo();
 ?>

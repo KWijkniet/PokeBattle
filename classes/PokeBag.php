@@ -3,7 +3,6 @@
 class PokeBag {
     //store variables
     private $pokemons = array();
-    private $amount;
 
     /*
         Function Name: __construct
@@ -48,6 +47,15 @@ class PokeBag {
     }
 
     /*
+        Function Name: removeAll
+        Function Doc: removes all from pokemons
+        Function Variables:
+    */
+    public function removeAll(){
+        unset($this->pokemons);
+    }
+
+    /*
         Function Name: getCount
         Function Doc: return count of current pokemons
         Function Variables:
@@ -71,11 +79,11 @@ class PokeBag {
     }
 
     /*
-        Function Name: getText
+        Function Name: getInfo
         Function Doc: return text with bag info
         Function Variables:
     */
-    public function getText(){
+    public function getInfo(){
         $result = "";
         for($i = 0; $i < count($this->pokemons); $i++){
             $name = (string)$this->pokemons[$i]->name;
