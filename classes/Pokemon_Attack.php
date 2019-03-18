@@ -20,30 +20,15 @@ class Pokemon_Attack {
     }
 
     /*
-        Function Name: getName
-        Function Doc: return name
-        Function Variables:
+        Function Name: __construct
+        Function Doc: Maxic get returns requested data
+        Function Variables: $variable = (string) name of variable to return
     */
-    public function getName(){
-        return $this->name;
-    }
-
-    /*
-        Function Name: getType
-        Function Doc: return type
-        Function Variables:
-    */
-    public function getType(){
-        return $this->type->getName();
-    }
-
-    /*
-        Function Name: getDamage
-        Function Doc: return damage
-        Function Variables:
-    */
-    public function getDamage(){
-        return $this->damage;
+    public function __get($variable){
+        if($variable == 'type'){
+            return $this->type->name;
+        }
+        return $this->$variable;
     }
 }
 

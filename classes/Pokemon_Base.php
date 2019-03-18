@@ -28,6 +28,15 @@ abstract class Pokemon_Base {
         $this->weakness = $weakness;
         $this->resistance = $resistance;
     }
+
+    /*
+        Function Name: __construct
+        Function Doc: Maxic get returns requested data
+        Function Variables: $variable = (string) name of variable to return
+    */
+    public function __get($variable){
+        return $this->$variable;
+    }
 }
 
 ?>

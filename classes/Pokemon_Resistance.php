@@ -17,21 +17,12 @@ class Pokemon_Resistance {
     }
 
     /*
-        Function Name: getName
-        Function Doc: return name
-        Function Variables:
+        Function Name: __construct
+        Function Doc: Maxic get returns requested data
+        Function Variables: $variable = (string) name of variable to return
     */
-    public function getName(){
-        return $this->type->getName();
-    }
-
-    /*
-        Function Name: getValue
-        Function Doc: return value
-        Function Variables:
-    */
-    public function getValue(){
-        return $this->value;
+    public function __get($variable){
+        return $this->$variable;
     }
 }
 

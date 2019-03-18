@@ -6,6 +6,18 @@ class PokeBag {
     private $amount;
 
     /*
+        Function Name: __construct
+        Function Doc: Maxic get returns requested data
+        Function Variables: $variable = (string) name of variable to return
+    */
+    public function __get($variable){
+        if($variable == 'type'){
+            return $this->type->name;
+        }
+        return $this->$variable;
+    }
+
+    /*
         Function Name: add
         Function Doc: Add pokemon to pokemons list
         Function Variables: $pokemon = (Pokemon_Base) pokemon to be added
@@ -45,6 +57,20 @@ class PokeBag {
     }
 
     /*
+        Function Name: getCount
+        Function Doc: return count of current pokemons
+        Function Variables:
+    */
+    public function getByName($name){
+        for($i = 0; $i < count($this->pokemons); $i++){
+            if($this->pokemons[$i]->name == $name){
+                return $this->pokemons[$i];
+            }
+        }
+        return null;
+    }
+
+    /*
         Function Name: getText
         Function Doc: return text with bag info
         Function Variables:
@@ -52,8 +78,8 @@ class PokeBag {
     public function getText(){
         $result = "";
         for($i = 0; $i < count($this->pokemons); $i++){
-            $name = (string)$this->pokemons[$i]->getName();
-            $hp = (string)$this->pokemons[$i]->getHitPoints();
+            $name = (string)$this->pokemons[$i]->name;
+            $hp = (string)$this->pokemons[$i]->hitpoints;
             $result .=  ($i + 1) . ': ' . $name . ' (' . $hp . 'HP)<br />';
         }
         return $result;

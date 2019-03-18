@@ -1,22 +1,5 @@
 <?php
 class Pokemon extends Pokemon_Base{
-    /*
-        Function Name: getName
-        Function Doc: return name
-        Function Variables:
-    */
-    public function getName(){
-        return $this->name;
-    }
-
-    /*
-        Function Name: getHitPoints
-        Function Doc: return hitpoints
-        Function Variables:
-    */
-    public function getHitPoints(){
-        return $this->hitpoints;
-    }
 
     /*
         Function Name: attackEnemy
@@ -31,11 +14,11 @@ class Pokemon extends Pokemon_Base{
         $attack;
 
         for($i = 0; $i < count($this->attacks); $i++){
-            if($attackName == $this->attacks[$i]->getName()){
+            if($attackName == $this->attacks[$i]->name){
                 $attack = $this->attacks[$i];
             }
         }
-        return $this->name . ' Attacked ' . $enemy->getName() . ' And Did ' . $enemy->takeDamage($this, $attack);
+        return $this->name . ' Attacked ' . $enemy->name . ' And Did ' . $enemy->takeDamage($this, $attack);
     }
 
     /*
@@ -48,21 +31,21 @@ class Pokemon extends Pokemon_Base{
         $damage;
         $message;
 
-        if($this->resistance->getName() == $attack->getType()){
+        if($this->resistance->name == $attack->type){
             //resistance
             $message = ' Damage (It Was Super Effective)';
-            $damage = $attack->getDamage();
-            $damage -= $this->resistance->getValue();
+            $damage = $attack->damage;
+            $damage -= $this->resistance->value;
             $damage = $damage < 0 ? 0 : $damage;
-        }else if($this->weakness->getName() == $attack->getType()){
+        }else if($this->weakness->name == $attack->type){
             //weakness
             $message = ' Damage (It Was Effective)';
-            $damage = $attack->getDamage();
+            $damage = $attack->damage;
             $damage *= $this->weakness->getMultiplier();
         }else{
             //not resistance. not weakness
             $message = ' Damage (It Was Not So Effective)';
-            $damage = $attack->getDamage();
+            $damage = $attack->damage;
         }
 
         $this->hitpoints -= $damage;

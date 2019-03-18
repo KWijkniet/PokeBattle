@@ -39,17 +39,17 @@ $pokeBag->add($charmeleon);
 
 //show battle
 echo '--------------------------------[STATS]--------------------------------<br />';
-echo $pikachu->getName() . ' (' . $pikachu->getHitPoints() . 'HP)<br />';
+echo $pikachu->name . ' (' . $pikachu->hitpoints . 'HP)<br />';
 echo '<br /><br />';
-echo $charmeleon->getName() . ' (' . $charmeleon->getHitPoints() . 'HP)<br />';
+echo $charmeleon->name . ' (' . $charmeleon->hitpoints . 'HP)<br />';
 
 echo '<br /><br />';
 echo '--------------------------------[LOG]--------------------------------<br />';
 echo $pikachu->attackEnemy($charmeleon, 'Electric Ring') . '<br />';
-echo $charmeleon->getName() . ' (new HP: ' . $charmeleon->getHitPoints() . ')<br />';
+echo $charmeleon->name . ' (new HP: ' . $charmeleon->hitpoints . ')<br />';
 echo '<br /><br />';
 echo $charmeleon->attackEnemy($pikachu, 'Flare') . '<br />';
-echo $pikachu->getName() . ' (new HP: ' . $pikachu->getHitPoints() . ')<br />';
+echo $pikachu->name . ' (new HP: ' . $pikachu->hitpoints . ')<br />';
 
 
 //show bag + content
@@ -58,4 +58,7 @@ echo '--------------------------------[PokeBag]--------------------------------<
 echo $pokeBag->getCount() . ' Pokemons<br /><br />';
 echo $pokeBag->getText();
 
+echo '<br /><br />';
+echo '--------------------------------[PokeBag]--------------------------------<br />';
+echo $pokeBag->getByName('Charmeleon')->name;
 ?>
