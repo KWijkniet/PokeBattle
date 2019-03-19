@@ -22,6 +22,9 @@ class Pokemon_Resistance {
         Function Variables: $variable = (string) name of variable to return
     */
     public function __get($variable){
+        if($variable == 'type'){
+            return $this->type->name;
+        }
         return $this->$variable;
     }
 }

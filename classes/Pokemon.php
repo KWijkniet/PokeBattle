@@ -30,18 +30,17 @@ class Pokemon extends Pokemon_Base{
     public function takeDamage($enemy, $attack){
         $damage;
         $message;
-
-        if($this->resistance->name == $attack->type){
+        if($this->resistance->type == $attack->type){
             //resistance
             $message = ' Damage (It Was Super Effective)';
             $damage = $attack->damage;
             $damage -= $this->resistance->value;
             $damage = $damage < 0 ? 0 : $damage;
-        }else if($this->weakness->name == $attack->type){
+        }else if($this->weakness->type == $attack->type){
             //weakness
             $message = ' Damage (It Was Effective)';
             $damage = $attack->damage;
-            $damage *= $this->weakness->getMultiplier();
+            $damage *= $this->weakness->multiplier;
         }else{
             //not resistance. not weakness
             $message = ' Damage (It Was Not So Effective)';

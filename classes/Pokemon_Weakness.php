@@ -18,7 +18,7 @@ class Pokemon_Weakness {
 
     /*
         Function Name: __construct
-        Function Doc: Maxic get returns requested data
+        Function Doc: Magic get returns requested data
         Function Variables: $variable = (string) name of variable to return
     */
     public function __get($variable){

@@ -1,0 +1,9 @@
+Na gekeken door: Brandon van Zanten en Damien Peerbolte
+
+Brandon:
++ "Goede beschreven functies en comments!"
+- "Probeer wat meer te committen, bijvoorbeeld als een functie werkt."
+
+Damien:
++ netjes
++ netjes
