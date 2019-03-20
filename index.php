@@ -4,36 +4,20 @@
 require 'init.php';
 
 //Create Pokemon
-$pikachu = new Pokemon(
-    /* Name */          'Pikachu',
-    /* Type */          'Lightning',
-    /* Health */        60,
-    /* Attacks */       [
-                            new Pokemon_Attack('Electric Ring', 'Lightning', 50),
-                            new Pokemon_Attack('Pika Punch', 'Normal', 20),
-                        ],
-    /* Weakness */      new Pokemon_Weakness('Fire', 1.5),
-    /* Resistance */    new Pokemon_Resistance('Fighting', 20)
-);
-
+$pikachu = new Pikachu();
 //Create Pokemon
-$charmeleon = new Pokemon(
-    /* Name */          'Charmeleon',
-    /* Type */          'Fire',
-    /* Health */        60,
-    /* Attacks */       [
-                            new Pokemon_Attack('Head Butt', 'Normal', 10),
-                            new Pokemon_Attack('Flare', 'Fire', 30),
-                        ],
-    /* Weakness */      new Pokemon_Weakness('Water', 2),
-    /* Resistance */    new Pokemon_Resistance('Lightning', 10)
-);
+// $pikachu1 = new Pikachu();
+//Create Pokemon
+$charmeleon = new Charmeleon();
 
 //create pokemon bag
 $pokeBag = new PokeBag();
+
 //add pokemon to bag
 $pokeBag->add($pikachu);
+// $pokeBag->add($pikachu1);
 $pokeBag->add($charmeleon);
+
 //remove pokemon from bag
 // $pokeBag->remove($charmeleon);
 // $pokeBag->removeAll();

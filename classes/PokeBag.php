@@ -5,7 +5,7 @@ class PokeBag {
     private $pokemons = array();
 
     /*
-        Function Name: __construct
+        Function Name: __get
         Function Doc: Maxic get returns requested data
         Function Variables: $variable = (string) name of variable to return
     */
@@ -22,9 +22,23 @@ class PokeBag {
         Function Variables: $pokemon = (Pokemon_Base) pokemon to be added
     */
     public function add($pokemon){
-        if(count($this->pokemons) < 10){
+        if(count($this->pokemons) < 10 && !$this->findPokemon($pokemon)){
             $this->pokemons[] = $pokemon;
         }
+    }
+
+    /*
+        Function Name: findPokemon
+        Function Doc: return boolean based on if pokemon is already in bag
+        Function Variables: $pokemon = (Pokemon_Base) pokemon to be checked
+    */
+    public function findPokemon($pokemon){
+        for ($i=0; $i < count($this->pokemons); $i++) {
+            if($this->pokemons[$i] == $pokemon){
+                return true;
+            }
+        }
+        return false;
     }
 
     /*
