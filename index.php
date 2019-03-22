@@ -6,7 +6,7 @@ require 'init.php';
 //Create Pokemon
 $pikachu = new Pikachu();
 //Create Pokemon
-// $pikachu1 = new Pikachu();
+$pikachu1 = new Pikachu();
 //Create Pokemon
 $charmeleon = new Charmeleon();
 
@@ -15,7 +15,7 @@ $pokeBag = new PokeBag();
 
 //add pokemon to bag
 $pokeBag->add($pikachu);
-// $pokeBag->add($pikachu1);
+$pokeBag->add($pikachu1);
 $pokeBag->add($charmeleon);
 
 //remove pokemon from bag
